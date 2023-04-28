@@ -1,5 +1,8 @@
 # Glog
 
+![build](https://github.com/iamando/glog/workflows/build/badge.svg)
+![license](https://img.shields.io/github/license/iamando/glog?color=success)
+
 A simple logger module for golang with timestamp support.
 
 ## Support
