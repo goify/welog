@@ -21,3 +21,5 @@ jobs:
           go-version: ${{ matrix.go-version }}
 
       - run: go version
+
+      - run: go install
