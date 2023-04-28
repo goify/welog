@@ -1,3 +1,7 @@
 package glog
 
-func init() {}
+import "fmt"
+
+func init() {
+	fmt.Println("Glog module")
+}
