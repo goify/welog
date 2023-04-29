@@ -25,7 +25,7 @@ import (
 
 func ExampleUsage() {
  // create a new logger with info level
- logger := glog.Glog(Info)
+ logger := glog.GenerateLogger(Info)
 
  // log some messages
  logger.Error("An error occurred")
