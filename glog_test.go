@@ -2,31 +2,30 @@ package glog
 
 import (
 	"bytes"
-	"log"
 	"strings"
 	"testing"
 	"time"
 )
 
 func Test(t *testing.T) {
-
 	var buf bytes.Buffer
 
-	l := Glog(Info)
+	logger := Glog(Info)
 
-	log.SetOutput(&buf)
+	logger.SetOutput(&buf)
 
 	timestamp := "[" + time.Now().Format("2006-01-02 15:04:05") + "]"
 
+	logger.Debug("Debug message")
+
 	infoMessage := "Info message"
+	logger.Info(infoMessage)
+
 	warnMessage := "Warn message"
+	logger.Warn(warnMessage)
+
 	errorMessage := "Error message"
-
-	l.Debug("Debug message")
-
-	l.Info(infoMessage)
-	l.Warn(warnMessage)
-	l.Error(errorMessage)
+	logger.Error(errorMessage)
 
 	infoLog := timestamp + " " + "[INFO]" + " " + infoMessage
 	warnLog := timestamp + " " + "[WARN]" + " " + warnMessage
