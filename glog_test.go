@@ -9,7 +9,7 @@ import (
 
 func Test(t *testing.T) {
 	var buf bytes.Buffer
-	logger := Glog(Info)
+	logger := GenerateLogger(Info)
 
 	logger.SetOutput(&buf)
 

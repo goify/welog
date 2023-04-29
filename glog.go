@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func Glog(level LogLevel) *Logger {
+func GenerateLogger(level LogLevel) *Logger {
 	return &Logger{level: level}
 }
 
