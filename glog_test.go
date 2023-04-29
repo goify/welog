@@ -23,6 +23,7 @@ func Test(t *testing.T) {
 	errorMessage := "Error message"
 
 	l.Debug("Debug message")
+
 	l.Info(infoMessage)
 	l.Warn(warnMessage)
 	l.Error(errorMessage)
