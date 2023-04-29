@@ -1,7 +1,10 @@
 package glog
 
+import "io"
+
 type LogLevel int
 
 type Logger struct {
-	level LogLevel
+	level  LogLevel
+	writer io.Writer
 }

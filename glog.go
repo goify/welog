@@ -27,7 +27,7 @@ func (l *Logger) log(level LogLevel, message string) {
 
 		logMessage := fmt.Sprintf("[%s] [%s] %s\n", timestamp, levelString, message)
 
-		fmt.Print(logMessage)
+		fmt.Fprint(l.writer, logMessage)
 	}
 }
 
