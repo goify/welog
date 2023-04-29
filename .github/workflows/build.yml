@@ -23,3 +23,5 @@ jobs:
       - run: go version
 
       - run: go install
+
+      - run: go test
