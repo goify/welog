@@ -16,20 +16,21 @@ func Test(t *testing.T) {
 
 	log.SetOutput(&buf)
 
-	now := "[" + time.Now().Format("2006-01-02 15:04:05") + "]"
+	timestamp := "[" + time.Now().Format("2006-01-02 15:04:05") + "]"
 
 	infoMessage := "Info message"
 	warnMessage := "Warn message"
 	errorMessage := "Error message"
 
 	l.Debug("Debug message")
+
 	l.Info(infoMessage)
 	l.Warn(warnMessage)
 	l.Error(errorMessage)
 
-	infoLog := now + " " + "[INFO]" + " " + infoMessage
-	warnLog := now + " " + "[WARN]" + " " + warnMessage
-	errorLog := now + " " + "[ERROR]" + " " + errorMessage
+	infoLog := timestamp + " " + "[INFO]" + " " + infoMessage
+	warnLog := timestamp + " " + "[WARN]" + " " + warnMessage
+	errorLog := timestamp + " " + "[ERROR]" + " " + errorMessage
 
 	expected := infoLog + "\n" + warnLog + "\n" + errorLog + "\n"
 
