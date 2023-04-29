@@ -9,6 +9,7 @@ func (l *Logger) log(level LogLevel, message string) {
 	if l.level >= level {
 		timestamp := time.Now().Format("2006-01-02 15:04:05")
 		levelString := ""
+
 		switch level {
 		case Error:
 			levelString = "ERROR"
@@ -19,7 +20,9 @@ func (l *Logger) log(level LogLevel, message string) {
 		case Debug:
 			levelString = "DEBUG"
 		}
+
 		logMessage := fmt.Sprintf("[%s] [%s] %s\n", timestamp, levelString, message)
+
 		fmt.Print(logMessage)
 	}
 }
