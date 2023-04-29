@@ -5,10 +5,6 @@ import (
 	"time"
 )
 
-func NewLogger(level LogLevel) *Logger {
-	return &Logger{level: level}
-}
-
 func (l *Logger) log(level LogLevel, message string) {
 	if l.level >= level {
 		timestamp := time.Now().Format("2006-01-02 15:04:05")
