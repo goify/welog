@@ -1,3 +1,3 @@
 theme: jekyll-theme-cayman
 title: glog
-description: a simple logger module for golang with timestamp support.
+description: a simple and colourful logger module for golang with timestamp support.
