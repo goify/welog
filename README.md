@@ -18,12 +18,14 @@ go get -u github.com/iamando/glog
 package main
 
 
-import "github.com/iamando/glog"
+import (
+  glog "github.com/iamando/glog"
+)
 
 
 func ExampleUsage() {
  // create a new logger with info level
- logger := Glog(Info)
+ logger := glog.Glog(Info)
 
  // log some messages
  logger.Error("An error occurred")
