@@ -32,6 +32,7 @@ func Test(t *testing.T) {
 	errorLog := now + " " + "[ERROR]" + " " + errorMessage
 
 	expected := infoLog + "\n" + warnLog + "\n" + errorLog + "\n"
+
 	if !strings.Contains(buf.String(), expected) {
 		t.Errorf("Log output does not contain expected messages. Got:\n%s\nExpected:\n%s", buf.String(), expected)
 	}
