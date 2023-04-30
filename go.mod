@@ -1,4 +1,4 @@
-module github.com/iamando/welog/v1
+module github.com/iamando/welog/v2
 
 go 1.19
 
