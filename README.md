@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./docs/logo.svg">
+  <img src="/docs/logo.svg">
 </p>
 
 ![build](https://github.com/iamando/welog/workflows/build/badge.svg)
