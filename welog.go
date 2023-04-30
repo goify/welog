@@ -3,6 +3,8 @@ package welog
 import (
 	"fmt"
 	"time"
+
+	"github.com/fatih/color"
 )
 
 func GenerateLogger(level LogLevel) *Logger {
@@ -13,19 +15,24 @@ func (l *Logger) log(level LogLevel, message string) {
 	if l.level >= level {
 		timestamp := time.Now().Format("2006-01-02 15:04:05")
 		levelString := ""
+		colorFunc := color.New(color.FgWhite).SprintFunc()
 
 		switch level {
 		case Error:
 			levelString = "ERROR"
+			colorFunc = color.New(color.FgRed).SprintFunc()
 		case Warn:
 			levelString = "WARN"
+			colorFunc = color.New(color.FgYellow).SprintFunc()
 		case Info:
 			levelString = "INFO"
+			colorFunc = color.New(color.FgGreen).SprintFunc()
 		case Debug:
 			levelString = "DEBUG"
+			colorFunc = color.New(color.FgBlue).SprintFunc()
 		}
 
-		logMessage := fmt.Sprintf("[%s] [%s] %s\n", timestamp, levelString, message)
+		logMessage := fmt.Sprintf("[%s] [%s] %s\n", timestamp, colorFunc(levelString), message)
 
 		fmt.Fprint(l.writer, logMessage)
 	}
