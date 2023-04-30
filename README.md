@@ -9,7 +9,8 @@ A simple and colourful logger module for golang with timestamp support.
 ## Install
 
 ```bash
-go get -u github.com/iamando/glog
+# v1 - minified logger module
+go get -u github.com/iamando/glog/v1
 ```
 
 ## Usage
@@ -19,7 +20,7 @@ package main
 
 
 import (
-  glog "github.com/iamando/glog"
+  glog "github.com/iamando/glog"  // use `/v1` if you need specific version
 )
 
 
