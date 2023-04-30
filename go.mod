@@ -1,3 +1,2 @@
-module github.com/iamando/glog/v1.0.2
-
+module github.com/iamando/glog/v1
 go 1.19
