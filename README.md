@@ -1,6 +1,7 @@
 # Welog
 
 ![build](https://github.com/iamando/welog/workflows/build/badge.svg)
+![license](https://img.shields.io/github/license/iamando/welog?color=success)
 ![Go version](https://img.shields.io/github/go-mod/go-version/iamando/welog)
 [![GoDoc](https://godoc.org/github.com/iamando/welog?status.svg)](https://godoc.org/github.com/iamando/welog)
 
