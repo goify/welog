@@ -32,9 +32,9 @@ func (l *Logger) log(level LogLevel, message string) {
 			colorFunc = color.New(color.FgBlue).SprintFunc()
 		}
 
-		logMessage := fmt.Sprintf("[%s] [%s] %s\n", timestamp, colorFunc(levelString), message)
+		logMessage := fmt.Sprintf("[%s] [%s] %s\n", timestamp, levelString, message)
 
-		fmt.Fprint(l.writer, logMessage)
+		fmt.Fprint(l.writer, colorFunc(logMessage))
 	}
 }
 
