@@ -12,6 +12,9 @@ A simple and colourful logger module for golang with timestamp support.
 ```bash
 # v1 - minified logger module
 go get -u github.com/iamando/welog/v1
+
+# v2 - minified and colourful logger module
+go get -u github.com/iamando/welog/v2
 ```
 
 ## Usage
@@ -21,7 +24,7 @@ package main
 
 
 import (
-  welog "github.com/iamando/welog"  // use `/v1` if you need specific version
+  welog "github.com/iamando/welog"  // use `/v1` or `/v2` if you need specific version
 )
 
 
