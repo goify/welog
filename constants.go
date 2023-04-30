@@ -1,4 +1,4 @@
-package glog
+package welog
 
 const (
 	Error LogLevel = iota

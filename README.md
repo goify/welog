@@ -1,8 +1,8 @@
-# Glog
+# Welog
 
-![build](https://github.com/iamando/glog/workflows/build/badge.svg)
-![license](https://img.shields.io/github/license/iamando/glog?color=success)
-![Go version](https://img.shields.io/github/go-mod/go-version/iamando/glog)
+![build](https://github.com/iamando/welog/workflows/build/badge.svg)
+![license](https://img.shields.io/github/license/iamando/welog?color=success)
+![Go version](https://img.shields.io/github/go-mod/go-version/iamando/welog)
 
 A simple and colourful logger module for golang with timestamp support.
 
@@ -10,7 +10,7 @@ A simple and colourful logger module for golang with timestamp support.
 
 ```bash
 # v1 - minified logger module
-go get -u github.com/iamando/glog/v1
+go get -u github.com/iamando/welog/v1
 ```
 
 ## Usage
@@ -20,13 +20,13 @@ package main
 
 
 import (
-  glog "github.com/iamando/glog"  // use `/v1` if you need specific version
+  welog "github.com/iamando/welog"  // use `/v1` if you need specific version
 )
 
 
 func ExampleUsage() {
  // create a new logger with info level
- logger := glog.GenerateLogger(Info)
+ logger := welog.GenerateLogger(Info)
 
  // log some messages
  logger.Error("An error occurred")
@@ -57,8 +57,8 @@ go test
 
 ## Support
 
-Glog is an MIT-licensed open source project. It can grow thanks to the sponsors and support.
+Welog is an MIT-licensed open source project. It can grow thanks to the sponsors and support.
 
 ## License
 
-Glog is [MIT licensed](LICENSE).
+Welog is [MIT licensed](LICENSE).
