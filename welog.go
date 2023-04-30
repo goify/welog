@@ -13,7 +13,7 @@ func GenerateLogger(level LogLevel) *Logger {
 
 func (l *Logger) log(level LogLevel, message string) {
 	if l.level >= level {
-		timestamp := time.Now().Format("2006-01-02 15:04:05")
+		timestamp := time.Now().Format(timestampFormat)
 		levelString := ""
 		colorFunc := color.New(color.FgWhite).SprintFunc()
 
