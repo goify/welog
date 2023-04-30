@@ -1,4 +1,6 @@
-# Welog
+<p align="center">
+  <img src="./docs/logo.svg">
+</p>
 
 ![build](https://github.com/iamando/welog/workflows/build/badge.svg)
 ![license](https://img.shields.io/github/license/iamando/welog?color=success)
