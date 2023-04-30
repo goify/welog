@@ -1,6 +1,10 @@
 package welog
 
-import "io"
+import (
+	"io"
+
+	"github.com/fatih/color"
+)
 
 func (l *Logger) SetOutput(w io.Writer) {
 	l.writer = w
@@ -22,5 +26,20 @@ func levelToString(level LogLevel) string {
 		return "DEBUG"
 	default:
 		return ""
+	}
+}
+
+func colorType(level LogLevel) func(a ...interface{}) string {
+	switch level {
+	case Error:
+		return color.New(color.FgRed).SprintFunc()
+	case Warn:
+		return color.New(color.FgYellow).SprintFunc()
+	case Info:
+		return color.New(color.FgGreen).SprintFunc()
+	case Debug:
+		return color.New(color.FgBlue).SprintFunc()
+	default:
+		return color.New(color.FgWhite).SprintFunc()
 	}
 }
