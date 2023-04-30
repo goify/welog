@@ -9,3 +9,5 @@ type Logger struct {
 	writer    io.Writer
 	formatter func(LogLevel, string) string
 }
+
+type ColorFormatter struct{}
