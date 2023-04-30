@@ -26,9 +26,9 @@ func Test(t *testing.T) {
 	errorMessage := "Error message"
 	logger.Error(errorMessage)
 
-	infoLog := timestamp + " " + "[INFO]" + " " + infoMessage
-	warnLog := timestamp + " " + "[WARN]" + " " + warnMessage
-	errorLog := timestamp + " " + "[ERROR]" + " " + errorMessage
+	infoLog := "\033[32m" + timestamp + " " + "[INFO]" + " " + infoMessage
+	warnLog := "\033[33m" + timestamp + " " + "[WARN]" + " " + warnMessage
+	errorLog := "\033[31m" + timestamp + " " + "[ERROR]" + " " + errorMessage
 
 	expected := infoLog + "\n" + warnLog + "\n" + errorLog + "\n"
 
