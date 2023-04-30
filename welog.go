@@ -14,21 +14,17 @@ func GenerateLogger(level LogLevel) *Logger {
 func (l *Logger) log(level LogLevel, message string) {
 	if l.level >= level {
 		timestamp := time.Now().Format(timestampFormat)
-		levelString := ""
+		levelString := levelToString(level)
 		colorFunc := color.New(color.FgWhite).SprintFunc()
 
 		switch level {
 		case Error:
-			levelString = "ERROR"
 			colorFunc = color.New(color.FgRed).SprintFunc()
 		case Warn:
-			levelString = "WARN"
 			colorFunc = color.New(color.FgYellow).SprintFunc()
 		case Info:
-			levelString = "INFO"
 			colorFunc = color.New(color.FgGreen).SprintFunc()
 		case Debug:
-			levelString = "DEBUG"
 			colorFunc = color.New(color.FgBlue).SprintFunc()
 		}
 
@@ -36,20 +32,4 @@ func (l *Logger) log(level LogLevel, message string) {
 
 		fmt.Fprint(l.writer, colorFunc(logMessage))
 	}
-}
-
-func (l *Logger) Error(message string) {
-	l.log(Error, message)
-}
-
-func (l *Logger) Warn(message string) {
-	l.log(Warn, message)
-}
-
-func (l *Logger) Info(message string) {
-	l.log(Info, message)
-}
-
-func (l *Logger) Debug(message string) {
-	l.log(Debug, message)
 }
