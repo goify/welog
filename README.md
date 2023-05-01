@@ -10,11 +10,7 @@ A simple and colourful logger module for golang with timestamp support.
 ## Install
 
 ```bash
-# v1 - minified logger module
-go get -u github.com/iamando/welog/v1
-
-# v2 - minified and colourful logger module
-go get -u github.com/iamando/welog/v2
+go get -u github.com/iamando/welog
 ```
 
 ## Usage
@@ -22,15 +18,14 @@ go get -u github.com/iamando/welog/v2
 ```go
 package main
 
-
 import (
-  welog "github.com/iamando/welog"  // use `/v1` or `/v2` if you need specific version
+  welog "github.com/iamando/welog"
 )
 
 
 func ExampleUsage() {
- // create a new logger with info level
- logger := welog.GenerateLogger(Info)
+ // create a new logger with info level with basic mode or use `welog.Colourful` to use colourful mode
+ logger := welog.GenerateLogger(Info, welog.Basic) // welog.Colourful
 
  // log some messages
  logger.Error("An error occurred")
