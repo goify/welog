@@ -36,27 +36,27 @@ func GenerateLogger(level LogLevel, mode LogMode, writeFile LogWrite) *Logger {
 	return logger
 }
 
-func (l *Logger) Log(level LogLevel, message string) {
-	if l.level >= level {
+func (logger *Logger) Log(level LogLevel, message string) {
+	if logger.level >= level {
 		timestamp := time.Now().Format(TimestampFormat)
-		levelString := LevelToString(level, string(l.mode))
+		levelString := LevelToString(level, string(logger.mode))
 
 		logMessage := fmt.Sprintf("[%s] [%s] %s\n", timestamp, levelString, message)
 
-		fmt.Fprint(l.writer, logMessage)
+		fmt.Fprint(logger.writer, logMessage)
 
-		if l.logFile != nil && level == Error {
-			fmt.Fprint(l.logFile, logMessage)
+		if logger.logFile != nil && level == Error {
+			fmt.Fprint(logger.logFile, logMessage)
 		}
 	}
 }
 
-func (l *Logger) SetOutput(w io.Writer) {
-	l.writer = w
+func (logger *Logger) SetOutput(writer io.Writer) {
+	logger.writer = writer
 }
 
-func (l *Logger) SetFormatter(formatter func(LogLevel, string) string) {
-	l.formatter = formatter
+func (logger *Logger) SetFormatter(formatter func(LogLevel, string) string) {
+	logger.formatter = formatter
 }
 
 func WithLogLevel(level LogLevel) func(*Logger) {
