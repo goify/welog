@@ -24,33 +24,17 @@ import "github.com/iamando/welog"
 ```go
 package main
 
-import (
-  welog "github.com/iamando/welog"
-)
+import "github.com/iamando/welog"
 
-
-func ExampleUsage() {
- // create a new logger with info level with basic mode or use `welog.Colorful` to use colorful mode
- logger := welog.GenerateLogger(Info, welog.Basic) // welog.Colorful
-
- // log some messages
- logger.Error("An error occurred")
- logger.Warn("A warning occurred")
- logger.Info("An informational message")
- logger.Debug("A debug message")
-
- // set the logger level to debug
- logger.level = Debug
-
- // log some more messages
- logger.Error("Another error occurred")
- logger.Warn("Another warning occurred")
- logger.Info("Another informational message")
- logger.Debug("Another debug message")
-}
 
 func main() {
- ExampleUsage()
+  logger := welog.GenerateLogger(welog.Info, welog.Basic, false)
+
+  // log some messages
+  logger.Error("An error occurred")
+  logger.Warn("A warning occurred")
+  logger.Info("An informational message")
+  logger.Debug("A debug message")
 }
 ```
 
