@@ -40,10 +40,10 @@ func TestBasicMode(t *testing.T) {
 	}
 }
 
-func TestColourfulMode(t *testing.T) {
+func TestColorfulMode(t *testing.T) {
 	var buf bytes.Buffer
 
-	logger := GenerateLogger(Info, Colourful)
+	logger := GenerateLogger(Info, Colorful)
 
 	logger.SetOutput(&buf)
 

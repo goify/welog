@@ -8,8 +8,8 @@ const (
 )
 
 const (
-	Basic     LogMode = "basic"
-	Colourful LogMode = "colorful"
+	Basic    LogMode = "basic"
+	Colorful LogMode = "colorful"
 )
 
 const TimestampFormat string = "2006-01-02 15:04:05"
