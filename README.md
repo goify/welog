@@ -5,7 +5,7 @@
 ![Go version](https://img.shields.io/github/go-mod/go-version/iamando/welog)
 [![GoDoc](https://godoc.org/github.com/iamando/welog?status.svg)](https://godoc.org/github.com/iamando/welog)
 
-A simple and colourful logger module for golang with timestamp support.
+A simple and colorful logger module for golang with timestamp support.
 
 ## Install
 
@@ -24,8 +24,8 @@ import (
 
 
 func ExampleUsage() {
- // create a new logger with info level with basic mode or use `welog.Colourful` to use colourful mode
- logger := welog.GenerateLogger(Info, welog.Basic) // welog.Colourful
+ // create a new logger with info level with basic mode or use `welog.Colorful` to use colorful mode
+ logger := welog.GenerateLogger(Info, welog.Basic) // welog.Colorful
 
  // log some messages
  logger.Error("An error occurred")
