@@ -14,32 +14,32 @@ func (l *Logger) SetFormatter(formatter func(LogLevel, string) string) {
 	l.formatter = formatter
 }
 
-func LevelToString(level LogLevel) string {
+func LevelToString(level LogLevel, mode string) string {
 	switch level {
 	case Error:
-		return "ERROR"
+		if mode == string(Basic) {
+			return "ERROR"
+		}
+		return color.New(color.FgRed).SprintFunc()("ERROR")
 	case Warn:
-		return "WARN"
+		if mode == string(Basic) {
+			return "WARN"
+		}
+		return color.New(color.FgYellow).SprintFunc()("WARN")
 	case Info:
-		return "INFO"
+		if mode == string(Basic) {
+			return "INFO"
+		}
+		return color.New(color.FgGreen).SprintFunc()("INFO")
 	case Debug:
-		return "DEBUG"
+		if mode == string(Basic) {
+			return "DEBUG"
+		}
+		return color.New(color.FgBlue).SprintFunc()("DEBUG")
 	default:
-		return ""
-	}
-}
-
-func ColorType(level LogLevel) func(a ...interface{}) string {
-	switch level {
-	case Error:
-		return color.New(color.FgRed).SprintFunc()
-	case Warn:
-		return color.New(color.FgYellow).SprintFunc()
-	case Info:
-		return color.New(color.FgGreen).SprintFunc()
-	case Debug:
-		return color.New(color.FgBlue).SprintFunc()
-	default:
-		return color.New(color.FgWhite).SprintFunc()
+		if mode == string(Basic) {
+			return "UNKNOWN"
+		}
+		return color.New(color.FgWhite).SprintFunc()("UNKNOWN")
 	}
 }
