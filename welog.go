@@ -2,13 +2,31 @@ package welog
 
 import (
 	"fmt"
+	"io"
+	"os"
 	"time"
 )
 
-func GenerateLogger(level LogLevel, mode LogMode) *Logger {
+func GenerateLogger(level LogLevel, mode LogMode, writeFile LogWrite) *Logger {
+	var writer io.Writer
+
+	if writeFile {
+		f, err := os.OpenFile("welog-errors.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Failed to create log file: %v\n", err)
+			writer = os.Stderr
+		} else {
+			writer = io.MultiWriter(os.Stderr, f)
+		}
+	} else {
+		writer = os.Stderr
+	}
+
 	return &Logger{
-		level: level,
-		mode:  mode,
+		level:     level,
+		mode:      mode,
+		writer:    writer,
+		writeFile: writeFile,
 	}
 }
 
