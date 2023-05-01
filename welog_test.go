@@ -12,7 +12,7 @@ import (
 func TestBasicMode(t *testing.T) {
 	var buf bytes.Buffer
 
-	logger := GenerateLogger(Info, "basic")
+	logger := GenerateLogger(Info, Basic)
 
 	logger.SetOutput(&buf)
 
@@ -43,7 +43,7 @@ func TestBasicMode(t *testing.T) {
 func TestColourfulMode(t *testing.T) {
 	var buf bytes.Buffer
 
-	logger := GenerateLogger(Info, "colourful")
+	logger := GenerateLogger(Info, Colourful)
 
 	logger.SetOutput(&buf)
 
