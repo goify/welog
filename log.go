@@ -7,9 +7,9 @@ import (
 
 func (l *Logger) log(level LogLevel, message string) {
 	if l.level >= level {
-		timestamp := time.Now().Format(timestampFormat)
-		levelString := levelToString(level)
-		colorFunc := colorType(level)
+		timestamp := time.Now().Format(TimestampFormat)
+		levelString := LevelToString(level)
+		colorFunc := ColorType(level)
 
 		logMessage := fmt.Sprintf("[%s] [%s] %s\n", timestamp, levelString, message)
 
