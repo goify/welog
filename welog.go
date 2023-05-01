@@ -51,18 +51,10 @@ func (l *Logger) Log(level LogLevel, message string) {
 	}
 }
 
-func (l *Logger) Error(message string) {
-	l.Log(Error, message)
+func (l *Logger) SetOutput(w io.Writer) {
+	l.writer = w
 }
 
-func (l *Logger) Warn(message string) {
-	l.Log(Warn, message)
-}
-
-func (l *Logger) Info(message string) {
-	l.Log(Info, message)
-}
-
-func (l *Logger) Debug(message string) {
-	l.Log(Debug, message)
+func (l *Logger) SetFormatter(formatter func(LogLevel, string) string) {
+	l.formatter = formatter
 }
