@@ -14,7 +14,7 @@ func (l *Logger) SetFormatter(formatter func(LogLevel, string) string) {
 	l.formatter = formatter
 }
 
-func levelToString(level LogLevel) string {
+func LevelToString(level LogLevel) string {
 	switch level {
 	case Error:
 		return "ERROR"
@@ -29,7 +29,7 @@ func levelToString(level LogLevel) string {
 	}
 }
 
-func colorType(level LogLevel) func(a ...interface{}) string {
+func ColorType(level LogLevel) func(a ...interface{}) string {
 	switch level {
 	case Error:
 		return color.New(color.FgRed).SprintFunc()

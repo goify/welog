@@ -5,6 +5,8 @@ import (
 	"strings"
 	"testing"
 	"time"
+
+	"github.com/fatih/color"
 )
 
 func Test(t *testing.T) {
@@ -26,9 +28,9 @@ func Test(t *testing.T) {
 	errorMessage := "Error message"
 	logger.Error(errorMessage)
 
-	infoLog := "\033[32m" + timestamp + " " + "[INFO]" + " " + infoMessage
-	warnLog := "\033[33m" + timestamp + " " + "[WARN]" + " " + warnMessage
-	errorLog := "\033[31m" + timestamp + " " + "[ERROR]" + " " + errorMessage
+	infoLog := color.New(color.FgGreen).SprintFunc()(timestamp + " " + "[INFO]" + " " + infoMessage)
+	warnLog := color.New(color.FgYellow).SprintFunc()(timestamp + " " + "[WARN]" + " " + warnMessage)
+	errorLog := color.New(color.FgRed).SprintFunc()(timestamp + " " + "[ERROR]" + " " + errorMessage)
 
 	expected := infoLog + "\n" + warnLog + "\n" + errorLog + "\n"
 
