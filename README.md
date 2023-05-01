@@ -33,9 +33,9 @@ You can customize the logger by passing it one or more options:
 
 ```go
 logger := welog.GenerateLogger(
-    welog.WithLogLevel(welog.Info), // By default `Info`
-    welog.WithLogMode(welog.Colorful), // By default `Basic`
-    welog.WithLogFile(true), // By default `false`, to give access create and write log file for errors
+  welog.WithLogLevel(welog.Info), // By default `Info`
+  welog.WithLogMode(welog.Colorful), // By default `Basic`
+  welog.WithLogFile(true), // By default `false`, to give access create and write log file for errors
 )
 ```
 
@@ -68,6 +68,27 @@ By default, logs will be written to standard error in the following format:
 
 ```bash
 [<timestamp>] [<level>] <message>
+```
+
+Where `<timestamp>` is the current time in the 2006-01-02 15:04:05 format, `<level>` is the log level, and `<message>` is the message to be logged.
+
+### Colorized output
+
+If the log mode is set to Color, the log level will be colorized in the console output:
+
+- `Debug`: white
+- `Info`: green
+- `Warn`: yellow
+- `Error`: red
+
+## Customization
+
+You can customize the output format of the logs by passing a formatting function to the `SetFormatter` method of a logger:
+
+```go
+logger.SetFormatter(func(level LogLevel, message string) string {
+  return fmt.Sprintf("%s [%s] %s", level, time.Now().Format("2006-01-02"), message)
+})
 ```
 
 ## Example
