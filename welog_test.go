@@ -28,11 +28,11 @@ func Test(t *testing.T) {
 	errorMessage := "Error message"
 	logger.Error(errorMessage)
 
-	infoLog := color.New(color.FgGreen).SprintFunc()(timestamp + " " + "[INFO]" + " " + infoMessage)
-	warnLog := color.New(color.FgYellow).SprintFunc()(timestamp + " " + "[WARN]" + " " + warnMessage)
-	errorLog := color.New(color.FgRed).SprintFunc()(timestamp + " " + "[ERROR]" + " " + errorMessage)
+	infoLog := timestamp + " " + "[" + color.New(color.FgGreen).SprintFunc()("INFO") + "]" + " " + infoMessage + "\n"
+	warnLog := timestamp + " " + "[" + color.New(color.FgYellow).SprintFunc()("WARN") + "]" + " " + warnMessage + "\n"
+	errorLog := timestamp + " " + "[" + color.New(color.FgRed).SprintFunc()("ERROR") + "]" + " " + errorMessage + "\n"
 
-	expected := infoLog + "\n" + warnLog + "\n" + errorLog + "\n"
+	expected := infoLog + warnLog + errorLog
 
 	if !strings.Contains(buf.String(), expected) {
 		t.Errorf("Log output does not contain expected messages. Got:\n%s\nExpected:\n%s", buf.String(), expected)
