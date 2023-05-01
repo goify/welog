@@ -6,7 +6,9 @@ import (
 )
 
 func GenerateLogger(level LogLevel) *Logger {
-	return &Logger{level: level}
+	return &Logger{
+		level: level,
+	}
 }
 
 func (l *Logger) Log(level LogLevel, message string) {
