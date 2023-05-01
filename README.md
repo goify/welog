@@ -10,10 +10,16 @@ A simple and colorful logger module for golang with timestamp support.
 ## Install
 
 ```bash
-go get -u github.com/iamando/welog
+go get github.com/iamando/welog
 ```
 
 ## Usage
+
+```go
+import "github.com/iamando/welog"
+```
+
+## Example
 
 ```go
 package main
