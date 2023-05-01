@@ -1,3 +1,3 @@
 theme: jekyll-theme-cayman
 title: welog
-description: a simple and colorful logger module for golang with timestamp support.
+description: a simple and colorful logging module for Go. It allows developers to easily log messages at different log levels, including Debug, Info, Warn, and Error.
