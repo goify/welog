@@ -28,7 +28,7 @@ import "github.com/iamando/welog"
 
 
 func main() {
-  logger := welog.GenerateLogger(welog.Info, welog.Basic)
+  logger := welog.GenerateLogger(welog.Info, welog.Basic, false)
 
   // log some messages
   logger.Error("An error occurred")
