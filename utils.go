@@ -1,18 +1,6 @@
 package welog
 
-import (
-	"io"
-
-	"github.com/fatih/color"
-)
-
-func (l *Logger) SetOutput(w io.Writer) {
-	l.writer = w
-}
-
-func (l *Logger) SetFormatter(formatter func(LogLevel, string) string) {
-	l.formatter = formatter
-}
+import "github.com/fatih/color"
 
 func LevelToString(level LogLevel, mode string) string {
 	switch level {
