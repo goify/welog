@@ -5,7 +5,7 @@
 ![Go version](https://img.shields.io/github/go-mod/go-version/iamando/welog)
 [![GoDoc](https://godoc.org/github.com/iamando/welog?status.svg)](https://godoc.org/github.com/iamando/welog)
 
-A simple and colorful logger module for golang with timestamp support.
+A simple and colorful logging module for Go. It allows developers to easily log messages at different log levels, including Debug, Info, Warn, and Error.
 
 ## Install
 
