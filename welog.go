@@ -58,3 +58,21 @@ func (l *Logger) SetOutput(w io.Writer) {
 func (l *Logger) SetFormatter(formatter func(LogLevel, string) string) {
 	l.formatter = formatter
 }
+
+func WithLogLevel(level LogLevel) func(*Logger) {
+	return func(logger *Logger) {
+		logger.level = level
+	}
+}
+
+func WithLogMode(mode LogMode) func(*Logger) {
+	return func(logger *Logger) {
+		logger.mode = mode
+	}
+}
+
+func WithLogFile(hasLogFile LogWrite) func(*Logger) {
+	return func(logger *Logger) {
+		logger.writeFile = hasLogFile
+	}
+}
