@@ -25,3 +25,5 @@ jobs:
       - run: go install
 
       - run: go test
+
+      - run: GOPROXY=proxy.golang.org go list -m github.com/iamando/welog
