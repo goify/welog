@@ -11,9 +11,9 @@ func (l *Logger) log(level LogLevel, message string) {
 		levelString := LevelToString(level)
 		colorFunc := ColorType(level)
 
-		logMessage := fmt.Sprintf("[%s] [%s] %s\n", timestamp, levelString, message)
+		logMessage := fmt.Sprintf("[%s] [%s] %s\n", timestamp, colorFunc(levelString), message)
 
-		fmt.Fprint(l.writer, colorFunc(logMessage))
+		fmt.Fprint(l.writer, logMessage)
 	}
 }
 
