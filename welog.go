@@ -5,19 +5,19 @@ import (
 	"time"
 )
 
-func GenerateLogger(level LogLevel) *Logger {
+func GenerateLogger(level LogLevel, mode LogMode) *Logger {
 	return &Logger{
 		level: level,
+		mode:  mode,
 	}
 }
 
 func (l *Logger) Log(level LogLevel, message string) {
 	if l.level >= level {
 		timestamp := time.Now().Format(TimestampFormat)
-		levelString := LevelToString(level)
-		colorFunc := ColorType(level)
+		levelString := LevelToString(level, string(l.mode))
 
-		logMessage := fmt.Sprintf("[%s] [%s] %s\n", timestamp, colorFunc(levelString), message)
+		logMessage := fmt.Sprintf("[%s] [%s] %s\n", timestamp, levelString, message)
 
 		fmt.Fprint(l.writer, logMessage)
 	}
