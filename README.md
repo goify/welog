@@ -29,7 +29,31 @@ Then, create a logger using the GenerateLogger function:
 logger := welog.GenerateLogger()
 ```
 
-The **GenerateLogger** function takes a **LogLevel** parameter, which specifies the minimum log level to output. For example, if you set the log level to **Info**, the logger will output all log messages at the **Info**, **Warn**, and **Error** levels.
+You can customize the logger by passing it one or more options:
+
+```go
+logger := welog.GenerateLogger(
+    welog.WithLogLevel(welog.Info), // By default `Info`
+    welog.WithLogMode(welog.Colorful), // By default `Basic`
+    welog.WithLogFile(true), // By default `false`, to give access create and write log file for errors
+)
+```
+
+## Options
+
+### WithLogLevel
+
+Set the log level for the logger. Available levels are Debug, Info, Warn, and Error.
+
+### WithLogMode
+
+Set the log mode for the logger. Available modes are Basic and Colorful.
+
+### WithLogFile
+
+Set whether to write logs to a file in addition to the console. If true, a file called welog-errors.log will be created in the current directory and error logs will be written to it.
+
+## Log
 
 Once you have a logger, you can use its methods to log messages at different levels:
 
@@ -38,6 +62,12 @@ logger.Debug("Debug message")
 logger.Info("Info message")
 logger.Warn("Warn message")
 logger.Error("Error message")
+```
+
+By default, logs will be written to standard error in the following format:
+
+```bash
+[<timestamp>] [<level>] <message>
 ```
 
 ## Example
