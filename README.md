@@ -26,17 +26,17 @@ import "github.com/iamando/welog"
 Then, create a logger using the GenerateLogger function:
 
 ```go
-logger := welog.GenerateLogger()
+logger := welog.GenerateLoggerBuilder().Build()
 ```
 
-You can customize the logger by passing it one or more options:
+You can customize the logger by chaining one or more options:
 
 ```go
-logger := welog.GenerateLogger(
-  welog.WithLogLevel(welog.Info), // By default `Info`
-  welog.WithLogMode(welog.Colorful), // By default `Basic`
-  welog.WithLogFile(true), // By default `false`, to give access create and write log file for errors
-)
+logger := welog.GenerateLoggerBuilder()
+  .WithLogLevel(welog.Info), // By default `Info`
+  .WithLogMode(welog.Colorful), // By default `Basic`
+  .WithLogFile(true), // By default `false`, to give access create and write log file for errors
+  .Build()
 ```
 
 ## Options
