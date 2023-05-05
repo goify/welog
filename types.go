@@ -21,3 +21,7 @@ type Logger struct {
 }
 
 type ColorFormatter struct{}
+
+type LoggerBuilder struct {
+	logger *Logger
+}
