@@ -2,7 +2,7 @@ package welog
 
 import "github.com/fatih/color"
 
-func LevelToString(level LogLevel, mode string) string {
+func levelToString(level LogLevel, mode string) string {
 	switch level {
 	case Error:
 		if mode == string(Basic) {
